@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react";
+import { useLocale } from "@/lib/locale-context";
 import { ScoreBar } from "./ScoreBar";
 import { WeightSlider } from "./WeightSlider";
 import type { Criterion } from "@/data/criteria";
@@ -20,7 +21,13 @@ export function CriterionCard({
   onWeightChange,
   categoryColor,
 }: CriterionCardProps) {
+  const { t } = useLocale();
   const [expanded, setExpanded] = useState<"none" | "why" | "rationale">("none");
+
+  const localeName = t[`cr_${criterion.id}` as keyof typeof t];
+  const localeDesc = t[`cr_${criterion.id}_desc` as keyof typeof t];
+  const name = typeof localeName === "string" ? localeName : criterion.name;
+  const description = typeof localeDesc === "string" ? localeDesc : criterion.description;
 
   return (
     <div
@@ -35,10 +42,10 @@ export function CriterionCard({
         <div className="flex items-start justify-between gap-4 flex-wrap">
           <div className="flex-1 min-w-[200px]">
             <h4 className="font-semibold text-base text-foreground leading-tight">
-              {criterion.name}
+              {name}
             </h4>
             <p className="text-base text-muted-foreground mt-1 leading-relaxed">
-              {criterion.description}
+              {description}
             </p>
           </div>
 
@@ -49,13 +56,13 @@ export function CriterionCard({
                 score={criterion.buildScore}
                 color="#e76f51"
                 gradientTo="#f4a261"
-                label="Build"
+                label={t.buildScoreLabel}
               />
               <ScoreBar
                 score={criterion.outsourceScore}
                 color="#2d6a4f"
                 gradientTo="#52b788"
-                label="3PL"
+                label={t.outsourceScoreLabel}
               />
             </div>
 
@@ -65,7 +72,7 @@ export function CriterionCard({
               onClick={(e) => e.stopPropagation()}
             >
               <span className="text-sm text-muted-foreground uppercase tracking-wider mb-1">
-                Weight
+                {t.weight}
               </span>
               <WeightSlider
                 value={weight}
@@ -87,7 +94,7 @@ export function CriterionCard({
                 expanded === "why" ? "rotate-180" : ""
               }`}
             />
-            Why This Matters
+            {t.whyThisMatters}
           </button>
           <button
             onClick={() =>
@@ -100,7 +107,7 @@ export function CriterionCard({
                 expanded === "rationale" ? "rotate-180" : ""
               }`}
             />
-            Scoring Rationale
+            {t.scoringRationale}
           </button>
         </div>
       </div>
@@ -123,7 +130,7 @@ export function CriterionCard({
               }}
             >
               <span className="font-semibold" style={{ color: categoryColor }}>
-                {expanded === "why" ? "Why this matters:" : "Scoring rationale:"}
+                {expanded === "why" ? `${t.whyThisMatters}:` : `${t.scoringRationale}:`}
               </span>{" "}
               {expanded === "why"
                 ? criterion.whyItMatters

@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react";
+import { useLocale } from "@/lib/locale-context";
 import { CriterionCard } from "./CriterionCard";
 import type { Category } from "@/data/criteria";
 
@@ -21,7 +22,11 @@ export function CategorySection({
   buildPct,
   outsourcePct,
 }: CategorySectionProps) {
+  const { t } = useLocale();
   const [collapsed, setCollapsed] = useState(false);
+
+  const catKey = `cat_${category.id}` as keyof typeof t;
+  const categoryName = typeof t[catKey] === "string" ? (t[catKey] as string) : category.name;
 
   return (
     <div className="mb-8">
@@ -39,10 +44,10 @@ export function CategorySection({
           className="font-mono text-base font-bold uppercase tracking-widest"
           style={{ color: category.color }}
         >
-          {category.name}
+          {categoryName}
         </h3>
         <span className="text-sm text-muted-foreground">
-          {category.criteria.length} criteria
+          {category.criteria.length} {t.criteria}
         </span>
 
         {/* Category subtotals */}

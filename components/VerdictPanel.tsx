@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useLocale } from "@/lib/locale-context";
 import type { VerdictResult } from "@/lib/calculations";
 
 interface VerdictPanelProps {
@@ -8,6 +9,7 @@ interface VerdictPanelProps {
 }
 
 export function VerdictPanel({ verdict }: VerdictPanelProps) {
+  const { t } = useLocale();
   const {
     buildPercentage,
     outsourcePercentage,
@@ -18,7 +20,7 @@ export function VerdictPanel({ verdict }: VerdictPanelProps) {
     deltaPercentage,
   } = verdict;
 
-  const winnerLabel = winner === "outsource" ? "Outsource (3PL)" : "Build In-House";
+  const winnerLabel = winner === "outsource" ? t.outsourceLabel : t.buildLabel;
   const winnerColor = winner === "outsource" ? "#52b788" : "#f4a261";
 
   return (
@@ -32,7 +34,7 @@ export function VerdictPanel({ verdict }: VerdictPanelProps) {
 
       <div className="relative p-6 sm:p-8 text-white">
         <h2 className="font-mono text-sm uppercase tracking-[3px] text-[#8a8aad] mb-2">
-          Overall Verdict
+          {t.overallVerdict}
         </h2>
 
         <motion.div
@@ -44,15 +46,15 @@ export function VerdictPanel({ verdict }: VerdictPanelProps) {
           transition={{ duration: 0.4 }}
         >
           {deltaPercentage < 0.1
-            ? "Dead even — adjust weights to break the tie"
-            : `${winnerLabel} leads by ${deltaPercentage.toFixed(1)}%`}
+            ? t.deadEven
+            : t.leadsBy(winnerLabel, deltaPercentage.toFixed(1))}
         </motion.div>
 
         <div className="flex flex-col sm:flex-row gap-6 sm:gap-8">
           {/* Build bar */}
           <div className="flex-1 min-w-[200px]">
             <div className="flex justify-between items-baseline mb-2">
-              <span className="text-base text-white/60">Build In-House</span>
+              <span className="text-base text-white/60">{t.buildLabel}</span>
               <span className="text-lg font-bold font-mono text-[#f4a261]">
                 {buildPercentage.toFixed(1)}%
               </span>
@@ -66,14 +68,14 @@ export function VerdictPanel({ verdict }: VerdictPanelProps) {
               />
             </div>
             <div className="text-sm text-white/30 mt-1 font-mono">
-              {buildWeightedTotal} / {maxPossibleScore} weighted points
+              {t.weightedPoints(buildWeightedTotal, maxPossibleScore)}
             </div>
           </div>
 
           {/* 3PL bar */}
           <div className="flex-1 min-w-[200px]">
             <div className="flex justify-between items-baseline mb-2">
-              <span className="text-base text-white/60">Outsource (3PL)</span>
+              <span className="text-base text-white/60">{t.outsourceLabel}</span>
               <span className="text-lg font-bold font-mono text-[#52b788]">
                 {outsourcePercentage.toFixed(1)}%
               </span>
@@ -87,17 +89,15 @@ export function VerdictPanel({ verdict }: VerdictPanelProps) {
               />
             </div>
             <div className="text-sm text-white/30 mt-1 font-mono">
-              {outsourceWeightedTotal} / {maxPossibleScore} weighted points
+              {t.weightedPoints(outsourceWeightedTotal, maxPossibleScore)}
             </div>
           </div>
         </div>
 
         {/* Guidance note */}
         <div className="mt-5 p-3 bg-white/5 rounded-lg text-base text-white/50 leading-relaxed backdrop-blur-sm">
-          <span className="text-white/70 font-medium">How to read this:</span>{" "}
-          These default scores represent a typical growth-stage direct-selling company.
-          Adjust the <span className="text-white/70 font-medium">weights</span> below
-          to reflect what matters most to your company right now. The verdict updates in real time.
+          <span className="text-white/70 font-medium">{t.howToRead}</span>{" "}
+          {t.howToReadBody}
         </div>
       </div>
     </div>
