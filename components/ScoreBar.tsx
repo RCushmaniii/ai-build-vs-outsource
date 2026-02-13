@@ -15,7 +15,7 @@ export function ScoreBar({ score, max = 10, color, gradientTo, label }: ScoreBar
 
   return (
     <div className="flex items-center gap-2 min-w-[160px]">
-      <span className="text-[11px] text-muted-foreground min-w-[36px] font-mono">
+      <span className="text-sm text-muted-foreground min-w-[36px] font-mono">
         {label}
       </span>
       <div className="flex-1 h-2 bg-muted rounded-full overflow-hidden">
@@ -32,7 +32,7 @@ export function ScoreBar({ score, max = 10, color, gradientTo, label }: ScoreBar
         />
       </div>
       <span
-        className="text-xs font-semibold min-w-[20px] font-mono text-right"
+        className="text-base font-semibold min-w-[20px] font-mono text-right"
         style={{ color }}
       >
         {score}

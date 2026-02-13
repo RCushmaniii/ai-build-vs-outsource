@@ -143,8 +143,8 @@ export const PRESETS: ScenarioPreset[] = [
   },
   {
     id: "terramar_default",
-    name: "TerraMar Default",
-    description: "Recommended weights for TerraMar's current situation",
+    name: "Recommended Default",
+    description: "Recommended weights for a growth-stage direct-selling company",
     weights: {
       upfront_capital: 9,
       cost_per_order: 8,

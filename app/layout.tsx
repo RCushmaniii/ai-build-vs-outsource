@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Space_Grotesk, Source_Serif_4, DM_Mono } from "next/font/google";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import { ThemeProvider } from "@/lib/theme-context";
+import { LocaleProvider } from "@/lib/locale-context";
+import { SiteHeader } from "@/components/SiteHeader";
 import "./globals.css";
 
 const spaceGrotesk = Space_Grotesk({
@@ -40,11 +43,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${spaceGrotesk.variable} ${sourceSerif.variable} ${dmMono.variable} antialiased`}
       >
-        <TooltipProvider>{children}</TooltipProvider>
+        <ThemeProvider>
+          <LocaleProvider>
+            <TooltipProvider>
+              <SiteHeader />
+              {children}
+            </TooltipProvider>
+          </LocaleProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

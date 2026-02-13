@@ -41,17 +41,17 @@ export function CategorySection({
         >
           {category.name}
         </h3>
-        <span className="text-xs text-muted-foreground">
+        <span className="text-sm text-muted-foreground">
           {category.criteria.length} criteria
         </span>
 
         {/* Category subtotals */}
         {buildPct !== undefined && outsourcePct !== undefined && (
           <div className="ml-auto flex items-center gap-3 mr-2">
-            <span className="text-xs font-mono" style={{ color: "#e76f51" }}>
+            <span className="text-sm font-mono" style={{ color: "#e76f51" }}>
               B: {buildPct.toFixed(0)}%
             </span>
-            <span className="text-xs font-mono" style={{ color: "#2d6a4f" }}>
+            <span className="text-sm font-mono" style={{ color: "#2d6a4f" }}>
               3PL: {outsourcePct.toFixed(0)}%
             </span>
           </div>

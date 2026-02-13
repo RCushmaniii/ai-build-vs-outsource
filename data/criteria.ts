@@ -258,7 +258,7 @@ export const CATEGORIES: Category[] = [
         buildScore: 6,
         outsourceScore: 7,
         whyItMatters:
-          "If TerraMar's products include supplements or cosmetics, there are COFEPRIS regulations around storage, handling, and documentation. Building compliance infrastructure in-house requires dedicated staff and ongoing audits. A good 3PL that serves the health and beauty industry likely has these certifications and processes already in place — but you can outsource the work, not the responsibility.",
+          "If your company's products include supplements or cosmetics, there are COFEPRIS regulations around storage, handling, and documentation. Building compliance infrastructure in-house requires dedicated staff and ongoing audits. A good 3PL that serves the health and beauty industry likely has these certifications and processes already in place — but you can outsource the work, not the responsibility.",
         scoringRationale:
           "Build scores a 6 because maintaining COFEPRIS compliance, customs documentation, and product handling certifications requires dedicated staff, regular audits, and staying current with regulatory changes. It's doable but resource-intensive. 3PL scores a 7 because experienced providers serving health and beauty already have certifications, trained staff, and established compliance processes. The gap is small because you still need to verify and audit their compliance — regulatory responsibility can never be fully delegated. You outsource the work, not the accountability.",
         defaultWeight: 6,

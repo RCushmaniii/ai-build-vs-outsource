@@ -14,7 +14,7 @@ interface PresetSelectorProps {
 export function PresetSelector({ onSelect }: PresetSelectorProps) {
   return (
     <div className="flex flex-wrap gap-2 mb-6">
-      <span className="text-xs text-muted-foreground self-center mr-1 font-mono uppercase tracking-wider">
+      <span className="text-sm text-muted-foreground self-center mr-1 font-mono uppercase tracking-wider">
         Presets:
       </span>
       {PRESETS.map((preset) => (
@@ -22,7 +22,7 @@ export function PresetSelector({ onSelect }: PresetSelectorProps) {
           <TooltipTrigger asChild>
             <button
               onClick={() => onSelect(preset.weights)}
-              className="px-3 py-1.5 text-xs font-medium rounded-lg border border-border/60 bg-white hover:bg-muted/50 hover:border-border text-muted-foreground hover:text-foreground transition-all duration-200 cursor-pointer"
+              className="px-3 py-1.5 text-sm font-medium rounded-lg border border-border/60 bg-card hover:bg-muted/50 hover:border-border text-muted-foreground hover:text-foreground transition-all duration-200 cursor-pointer"
             >
               {preset.name}
             </button>

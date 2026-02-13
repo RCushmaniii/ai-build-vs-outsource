@@ -12,7 +12,7 @@ Open [ai-build-vs-outsource.vercel.app](https://ai-build-vs-outsource.vercel.app
 
 **Try these scenarios:**
 
-1. **Default view** — See the TerraMar-calibrated verdict with 20 criteria scored across Financial, Operational, Strategic, Control & Quality, and Risk categories
+1. **Default view** — See the industry-calibrated verdict with 20 criteria scored across Financial, Operational, Strategic, Control & Quality, and Risk categories
 2. **Load "Growth Emergency" preset** — Watch the verdict shift as speed-to-scale and cash flow weights spike to 10
 3. **Load "Control First" preset** — See how maximizing quality and data ownership weights changes the outcome
 4. **Adjust individual weights** — Drag any slider and watch the verdict panel, radar chart, and category subtotals update instantly
@@ -26,7 +26,7 @@ Open [ai-build-vs-outsource.vercel.app](https://ai-build-vs-outsource.vercel.app
 |---------|---------|
 | **Real-time weighted scoring** | Verdict updates instantly as you drag any of 20 weight sliders (1-10 scale) |
 | **5-category radar chart** | Visual comparison of Build vs. 3PL across Financial, Operational, Strategic, Control, and Risk |
-| **6 scenario presets** | One-click weight profiles: Balanced, Growth Emergency, Control First, Cost Optimizer, Risk Averse, TerraMar Default |
+| **6 scenario presets** | One-click weight profiles: Balanced, Growth Emergency, Control First, Cost Optimizer, Risk Averse, Recommended Default |
 | **Shareable URLs** | Weight configuration encodes into query params — share a specific scenario via link |
 | **Expandable rationale** | Each criterion includes "Why This Matters" and "Scoring Rationale" sections with industry-specific analysis |
 | **Print-ready layout** | Print button strips interactive elements for a clean board-presentation PDF |
@@ -127,8 +127,8 @@ Edit `data/criteria.ts` to change the fixed Build/3PL scores for any criterion. 
 {
   id: "speed_to_scale",
   name: "Speed to Scale",
-  buildScore: 3,        // Change this for TerraMar-specific data
-  outsourceScore: 9,    // Change this for TerraMar-specific data
+  buildScore: 3,        // Change this for your company-specific data
+  outsourceScore: 9,    // Change this for your company-specific data
   defaultWeight: 10,
   // ...content fields
 }

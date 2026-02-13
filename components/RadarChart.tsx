@@ -22,7 +22,7 @@ export function RadarChart({ categoryScores }: RadarChartProps) {
   }));
 
   return (
-    <div className="bg-white rounded-xl border border-border/60 p-6 mb-8">
+    <div className="bg-card rounded-xl border border-border/60 p-6 mb-8">
       <h3 className="font-serif text-lg font-semibold text-foreground mb-4">
         Category Comparison
       </h3>
@@ -32,7 +32,7 @@ export function RadarChart({ categoryScores }: RadarChartProps) {
             <PolarGrid stroke="#e5e5e5" />
             <PolarAngleAxis
               dataKey="category"
-              tick={{ fontSize: 12, fill: "#666" }}
+              tick={{ fontSize: 14, fill: "#666" }}
             />
             <Radar
               name="Build"
@@ -51,7 +51,7 @@ export function RadarChart({ categoryScores }: RadarChartProps) {
               strokeWidth={2}
             />
             <Legend
-              wrapperStyle={{ fontSize: "12px", fontFamily: "var(--font-mono)" }}
+              wrapperStyle={{ fontSize: "14px", fontFamily: "var(--font-mono)" }}
             />
           </RechartsRadar>
         </ResponsiveContainer>

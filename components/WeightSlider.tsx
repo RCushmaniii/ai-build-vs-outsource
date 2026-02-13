@@ -21,7 +21,7 @@ export function WeightSlider({ value, onChange, color }: WeightSliderProps) {
         style={{ color }}
       />
       <span
-        className="font-mono font-bold text-sm min-w-[24px] text-center"
+        className="font-mono font-bold text-base min-w-[24px] text-center"
         style={{ color }}
       >
         {value}

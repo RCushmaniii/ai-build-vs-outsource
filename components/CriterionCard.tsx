@@ -24,7 +24,7 @@ export function CriterionCard({
 
   return (
     <div
-      className="bg-white rounded-xl border border-border/60 transition-all duration-200 hover:shadow-md group"
+      className="bg-card rounded-xl border border-border/60 transition-all duration-200 hover:shadow-md group"
       style={{
         borderLeftWidth: "3px",
         borderLeftColor: `${categoryColor}66`,
@@ -34,10 +34,10 @@ export function CriterionCard({
       <div className="p-4 sm:p-5">
         <div className="flex items-start justify-between gap-4 flex-wrap">
           <div className="flex-1 min-w-[200px]">
-            <h4 className="font-semibold text-sm text-foreground leading-tight">
+            <h4 className="font-semibold text-base text-foreground leading-tight">
               {criterion.name}
             </h4>
-            <p className="text-xs text-muted-foreground mt-1 leading-relaxed">
+            <p className="text-base text-muted-foreground mt-1 leading-relaxed">
               {criterion.description}
             </p>
           </div>
@@ -64,7 +64,7 @@ export function CriterionCard({
               className="flex flex-col items-center"
               onClick={(e) => e.stopPropagation()}
             >
-              <span className="text-[10px] text-muted-foreground uppercase tracking-wider mb-1">
+              <span className="text-sm text-muted-foreground uppercase tracking-wider mb-1">
                 Weight
               </span>
               <WeightSlider
@@ -80,10 +80,10 @@ export function CriterionCard({
         <div className="flex gap-3 mt-3">
           <button
             onClick={() => setExpanded(expanded === "why" ? "none" : "why")}
-            className="flex items-center gap-1 text-xs text-muted-foreground hover:text-foreground transition-colors"
+            className="flex items-center gap-1.5 text-base text-muted-foreground hover:text-foreground transition-colors"
           >
             <ChevronDown
-              className={`w-3 h-3 transition-transform duration-200 ${
+              className={`w-3.5 h-3.5 transition-transform duration-200 ${
                 expanded === "why" ? "rotate-180" : ""
               }`}
             />
@@ -93,10 +93,10 @@ export function CriterionCard({
             onClick={() =>
               setExpanded(expanded === "rationale" ? "none" : "rationale")
             }
-            className="flex items-center gap-1 text-xs text-muted-foreground hover:text-foreground transition-colors"
+            className="flex items-center gap-1.5 text-base text-muted-foreground hover:text-foreground transition-colors"
           >
             <ChevronDown
-              className={`w-3 h-3 transition-transform duration-200 ${
+              className={`w-3.5 h-3.5 transition-transform duration-200 ${
                 expanded === "rationale" ? "rotate-180" : ""
               }`}
             />
@@ -116,7 +116,7 @@ export function CriterionCard({
             className="overflow-hidden"
           >
             <div
-              className="mx-4 mb-4 sm:mx-5 sm:mb-5 p-4 rounded-lg text-sm text-muted-foreground leading-relaxed"
+              className="mx-4 mb-4 sm:mx-5 sm:mb-5 p-4 rounded-lg text-base text-muted-foreground leading-relaxed"
               style={{
                 background: `${categoryColor}08`,
                 borderLeft: `3px solid ${categoryColor}44`,

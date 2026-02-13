@@ -33,21 +33,21 @@ export function ExportActions({ onReset }: ExportActionsProps) {
     <div className="flex flex-wrap gap-2 print:hidden">
       <button
         onClick={handlePrint}
-        className="flex items-center gap-2 px-4 py-2 text-xs font-medium rounded-lg border border-border/60 bg-white hover:bg-muted/50 text-muted-foreground hover:text-foreground transition-all cursor-pointer"
+        className="flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-lg border border-border/60 bg-card hover:bg-muted/50 text-muted-foreground hover:text-foreground transition-all cursor-pointer"
       >
         <Printer className="w-3.5 h-3.5" />
         Print View
       </button>
       <button
         onClick={handleCopyLink}
-        className="flex items-center gap-2 px-4 py-2 text-xs font-medium rounded-lg border border-border/60 bg-white hover:bg-muted/50 text-muted-foreground hover:text-foreground transition-all cursor-pointer"
+        className="flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-lg border border-border/60 bg-card hover:bg-muted/50 text-muted-foreground hover:text-foreground transition-all cursor-pointer"
       >
         <Link2 className="w-3.5 h-3.5" />
         Share Link
       </button>
       <button
         onClick={onReset}
-        className="flex items-center gap-2 px-4 py-2 text-xs font-medium rounded-lg border border-border/60 bg-white hover:bg-muted/50 text-muted-foreground hover:text-foreground transition-all cursor-pointer"
+        className="flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-lg border border-border/60 bg-card hover:bg-muted/50 text-muted-foreground hover:text-foreground transition-all cursor-pointer"
       >
         <RotateCcw className="w-3.5 h-3.5" />
         Reset All Weights

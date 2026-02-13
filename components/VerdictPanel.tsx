@@ -31,7 +31,7 @@ export function VerdictPanel({ verdict }: VerdictPanelProps) {
       </div>
 
       <div className="relative p-6 sm:p-8 text-white">
-        <h2 className="font-mono text-xs uppercase tracking-[3px] text-[#8a8aad] mb-2">
+        <h2 className="font-mono text-sm uppercase tracking-[3px] text-[#8a8aad] mb-2">
           Overall Verdict
         </h2>
 
@@ -52,7 +52,7 @@ export function VerdictPanel({ verdict }: VerdictPanelProps) {
           {/* Build bar */}
           <div className="flex-1 min-w-[200px]">
             <div className="flex justify-between items-baseline mb-2">
-              <span className="text-sm text-white/60">Build In-House</span>
+              <span className="text-base text-white/60">Build In-House</span>
               <span className="text-lg font-bold font-mono text-[#f4a261]">
                 {buildPercentage.toFixed(1)}%
               </span>
@@ -65,7 +65,7 @@ export function VerdictPanel({ verdict }: VerdictPanelProps) {
                 transition={{ duration: 0.6, ease: "easeOut" }}
               />
             </div>
-            <div className="text-xs text-white/30 mt-1 font-mono">
+            <div className="text-sm text-white/30 mt-1 font-mono">
               {buildWeightedTotal} / {maxPossibleScore} weighted points
             </div>
           </div>
@@ -73,7 +73,7 @@ export function VerdictPanel({ verdict }: VerdictPanelProps) {
           {/* 3PL bar */}
           <div className="flex-1 min-w-[200px]">
             <div className="flex justify-between items-baseline mb-2">
-              <span className="text-sm text-white/60">Outsource (3PL)</span>
+              <span className="text-base text-white/60">Outsource (3PL)</span>
               <span className="text-lg font-bold font-mono text-[#52b788]">
                 {outsourcePercentage.toFixed(1)}%
               </span>
@@ -86,18 +86,18 @@ export function VerdictPanel({ verdict }: VerdictPanelProps) {
                 transition={{ duration: 0.6, ease: "easeOut" }}
               />
             </div>
-            <div className="text-xs text-white/30 mt-1 font-mono">
+            <div className="text-sm text-white/30 mt-1 font-mono">
               {outsourceWeightedTotal} / {maxPossibleScore} weighted points
             </div>
           </div>
         </div>
 
         {/* Guidance note */}
-        <div className="mt-5 p-3 bg-white/5 rounded-lg text-sm text-white/50 leading-relaxed backdrop-blur-sm">
+        <div className="mt-5 p-3 bg-white/5 rounded-lg text-base text-white/50 leading-relaxed backdrop-blur-sm">
           <span className="text-white/70 font-medium">How to read this:</span>{" "}
           These default scores represent a typical growth-stage direct-selling company.
           Adjust the <span className="text-white/70 font-medium">weights</span> below
-          to reflect what matters most to TerraMar right now. The verdict updates in real time.
+          to reflect what matters most to your company right now. The verdict updates in real time.
         </div>
       </div>
     </div>
