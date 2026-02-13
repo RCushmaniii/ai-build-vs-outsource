@@ -1,65 +1,105 @@
-import Image from "next/image";
+"use client";
+
+import { CATEGORIES } from "@/data/criteria";
+import { useWeights } from "@/hooks/useWeights";
+import { useVerdict } from "@/hooks/useVerdict";
+import { VerdictPanel } from "@/components/VerdictPanel";
+import { CategorySection } from "@/components/CategorySection";
+import { RadarChart } from "@/components/RadarChart";
+import { PresetSelector } from "@/components/PresetSelector";
+import { ExportActions } from "@/components/ExportActions";
 
 export default function Home() {
+  const { weights, updateWeight, resetWeights, loadPreset } = useWeights();
+  const { verdict, categoryScores } = useVerdict(weights);
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+    <main className="max-w-[900px] mx-auto px-4 sm:px-6 py-8 sm:py-12 min-h-screen">
+      {/* Header */}
+      <header className="mb-8">
+        <div className="flex items-center gap-3 mb-2">
+          <div className="w-1.5 h-8 rounded-full bg-[#FF6A3D]" />
+          <h1 className="font-display text-3xl sm:text-4xl font-bold text-foreground tracking-tight">
+            Build vs. Outsource
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+        </div>
+        <p className="text-base text-muted-foreground leading-relaxed ml-[18px]">
+          Decision Framework for TerraMar Brands — 20 Weighted Criteria
+        </p>
+        <p className="text-sm text-muted-foreground/60 mt-1 ml-[18px]">
+          Drag the weight sliders to reflect your priorities. The verdict updates in real time.
+        </p>
+      </header>
+
+      {/* Verdict panel */}
+      <VerdictPanel verdict={verdict} />
+
+      {/* Controls bar */}
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-6 print:hidden">
+        <PresetSelector onSelect={loadPreset} />
+        <ExportActions onReset={resetWeights} />
+      </div>
+
+      {/* Radar chart */}
+      <RadarChart categoryScores={categoryScores} />
+
+      {/* Category sections */}
+      {CATEGORIES.map((cat) => {
+        const catScore = categoryScores.find((cs) => cs.categoryId === cat.id);
+        return (
+          <CategorySection
+            key={cat.id}
+            category={cat}
+            weights={weights}
+            onWeightChange={updateWeight}
+            buildPct={catScore?.buildPercentage}
+            outsourcePct={catScore?.outsourcePercentage}
+          />
+        );
+      })}
+
+      {/* How it works footer */}
+      <div className="bg-white rounded-xl border border-border/60 p-6 sm:p-8 mt-8 mb-12">
+        <h3 className="font-display text-lg font-semibold text-foreground mb-3">
+          How This Framework Works
+        </h3>
+        <div className="text-sm text-muted-foreground leading-relaxed space-y-3">
+          <p>
+            Each criterion has two <strong className="text-foreground">fixed scores</strong> (Build
+            vs. 3PL) representing typical outcomes for a growth-stage direct-selling company. These
+            defaults are based on industry patterns — once you provide your real data, we&apos;ll
+            customize them to TerraMar&apos;s exact situation.
+          </p>
+          <p>
+            The <strong className="text-foreground">weight</strong> is where your strategy comes in.
+            A weight of 10 means &ldquo;this is mission-critical to us right now.&rdquo; A weight of
+            1 means &ldquo;nice to have but not a deciding factor.&rdquo; The final score is the sum
+            of (score x weight) across all criteria.
+          </p>
+          <p>
+            <strong className="text-foreground">The power of this model:</strong> When you adjust
+            weights to reflect TerraMar&apos;s real priorities, the answer emerges from your own
+            strategic thinking — not from a gut feeling. It turns a complex, emotional decision into a
+            data-driven conversation you can present to your CEO and board.
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
+      </div>
+
+      {/* CushLabs branding footer */}
+      <footer className="text-center py-6 border-t border-border/40 print:hidden">
+        <p className="text-xs text-muted-foreground/50 font-mono">
+          Built by{" "}
           <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+            href="https://cushlabs.ai"
             target="_blank"
             rel="noopener noreferrer"
+            className="text-[#FF6A3D] hover:underline"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
+            CushLabs.ai
           </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+          {" "}— AI Integration & Software Development Consulting
+        </p>
+      </footer>
+    </main>
   );
 }
