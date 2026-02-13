@@ -112,6 +112,95 @@ export const translations = {
     cr_dependency_risk_desc: "What happens if your 3PL has a major failure?",
     cr_labor_risk: "Labor & Staffing Risk",
     cr_labor_risk_desc: "Hiring, training, turnover, labor disputes.",
+
+    // ── Operational Cost Simulator ──────────────────────────────
+
+    // Page chrome
+    ops_title: "Operational Cost Simulator",
+    ops_subtitle: "Interactive what-if tool for modeling operational costs under growth scenarios",
+    ops_instructions: "Drag the volume slider or select a scenario. Edit costs below to model your specific operation.",
+    ops_linkCopied: "Link copied to clipboard!",
+
+    // Dashboard
+    ops_currentState: "Current State",
+    ops_projectedState: "Projected State",
+    ops_ordersPerMonth: "orders/month",
+    ops_totalMonthlyCost: "Monthly Cost",
+    ops_totalCostLabel: "total cost",
+    ops_costPerOrder: "Cost / Order",
+    ops_margin: "Margin",
+    ops_breakEvenLabel: "Break-Even",
+    ops_costBreakdown: "Cost Breakdown",
+    ops_fixed: "Fixed",
+    ops_variable: "Variable",
+    ops_step: "Step",
+    ops_warehouseUtil: "Warehouse Utilization",
+    ops_laborUtil: "Labor Utilization",
+    ops_capacity: "capacity",
+    ops_triggered: "Triggered Costs",
+
+    // Step cost descriptions
+    ops_stepFTE3: "Additional warehouse FTE (#3)",
+    ops_stepWarehouse: "Additional warehouse space (+10K sq ft)",
+
+    // Scenarios
+    ops_scenarios: "Growth Scenarios",
+    ops_presetsLabel: "Presets:",
+    ops_projectedVolume: "Projected Volume",
+    ops_currentLabel: "Current",
+    ops_projectedLabel: "Projected",
+    ops_scenario_current: "Current",
+    ops_scenario_current_desc: "Baseline 520 orders/month",
+    ops_scenario_conservative: "Conservative (+30%)",
+    ops_scenario_conservative_desc: "Steady organic growth",
+    ops_scenario_expected: "Expected (+50%)",
+    ops_scenario_expected_desc: "Moderate growth scenario",
+    ops_scenario_convention: "Convention (+100%)",
+    ops_scenario_convention_desc: "Peak season surge — doubled volume, higher returns",
+    ops_scenario_aggressive: "Aggressive (+200%)",
+    ops_scenario_aggressive_desc: "Post-expansion full capacity push",
+
+    // Charts
+    ops_costCurveTitle: "Cost per Order vs. Volume",
+    ops_costCurveDesc: "Shows how unit economics improve with scale — and where step costs create jumps",
+    ops_marginCurveTitle: "Margin % vs. Volume",
+    ops_marginCurveDesc: "Identifies the sweet spot where margins peak before capacity constraints compress them",
+    ops_totalCostTitle: "Total Monthly Cost vs. Volume",
+    ops_totalCostDesc: "Step-function costs create visible jumps when hiring thresholds or capacity limits are reached",
+
+    // Cost input panel
+    ops_costStructure: "Cost Structure",
+    ops_costStructureDesc: "Edit any field to see how changes affect your cost curves and margins in real time.",
+    ops_fixedCosts: "Fixed Costs",
+    ops_variableCosts: "Variable Costs",
+    ops_stepCosts: "Step Costs",
+    ops_warehouseLease: "Warehouse Lease",
+    ops_equipment: "Equipment Lease",
+    ops_utilities: "Insurance & Utilities",
+    ops_management: "Management Salaries",
+    ops_totalFixed: "Total Fixed",
+    ops_laborPerOrder: "Picking & Packing Labor",
+    ops_shippingPerOrder: "Shipping (avg)",
+    ops_packagingPerOrder: "Packaging Materials",
+    ops_returnsRate: "Returns Rate",
+    ops_returnsCost: "Returns Processing Cost",
+    ops_totalVariable: "Total Variable",
+    ops_scenarioSettings: "Revenue & Capacity",
+    ops_avgRevenue: "Avg Revenue per Order",
+    ops_currentVolume: "Current Monthly Volume",
+    ops_warehouseCapacity: "Warehouse Capacity",
+    ops_demoDisclaimer: "Demo assumptions based on a Terramar-like direct-selling company. All values are editable — replace with your actual data for accurate modeling.",
+
+    // Comparison table
+    ops_comparisonTitle: "Scenario Comparison",
+    ops_metric: "Metric",
+    ops_monthlyVolume: "Monthly Volume",
+
+    // How it works
+    ops_howItWorksTitle: "How This Tool Works",
+    ops_howItWorks1: "Operational costs are modeled as three layers: fixed costs (rent, equipment, management), variable costs (labor, shipping, packaging per order), and step-function costs (new hires and facility expansions triggered at volume thresholds). This separation reveals how unit economics actually behave at different scales.",
+    ops_howItWorks2: "The volume slider lets you instantly see what happens to your cost per order, margin, and utilization at any volume level. Volume discount tiers for shipping and packaging kick in automatically, and step costs appear when you cross hiring or capacity thresholds.",
+    ops_howItWorks3: "Every input is editable — replace the demo defaults with your real numbers for accurate modeling. The URL updates as you adjust, so you can bookmark or share any specific configuration for board presentations.",
   },
   es: {
     // Header
@@ -224,6 +313,95 @@ export const translations = {
     cr_dependency_risk_desc: "¿Qué pasa si su 3PL tiene una falla grave?",
     cr_labor_risk: "Riesgo Laboral y de Personal",
     cr_labor_risk_desc: "Contratación, capacitación, rotación, disputas laborales.",
+
+    // ── Simulador de Costos Operativos ──────────────────────────
+
+    // Page chrome
+    ops_title: "Simulador de Costos Operativos",
+    ops_subtitle: "Herramienta interactiva para modelar costos operativos bajo escenarios de crecimiento",
+    ops_instructions: "Arrastre el control de volumen o seleccione un escenario. Edite los costos abajo para modelar su operación específica.",
+    ops_linkCopied: "Enlace copiado al portapapeles!",
+
+    // Dashboard
+    ops_currentState: "Estado Actual",
+    ops_projectedState: "Estado Proyectado",
+    ops_ordersPerMonth: "pedidos/mes",
+    ops_totalMonthlyCost: "Costo Mensual",
+    ops_totalCostLabel: "costo total",
+    ops_costPerOrder: "Costo / Pedido",
+    ops_margin: "Margen",
+    ops_breakEvenLabel: "Punto de Equilibrio",
+    ops_costBreakdown: "Desglose de Costos",
+    ops_fixed: "Fijo",
+    ops_variable: "Variable",
+    ops_step: "Escalonado",
+    ops_warehouseUtil: "Utilización del Almacén",
+    ops_laborUtil: "Utilización de Personal",
+    ops_capacity: "capacidad",
+    ops_triggered: "Costos Activados",
+
+    // Step cost descriptions
+    ops_stepFTE3: "FTE adicional de almacén (#3)",
+    ops_stepWarehouse: "Espacio adicional de almacén (+10K pies²)",
+
+    // Scenarios
+    ops_scenarios: "Escenarios de Crecimiento",
+    ops_presetsLabel: "Presets:",
+    ops_projectedVolume: "Volumen Proyectado",
+    ops_currentLabel: "Actual",
+    ops_projectedLabel: "Proyectado",
+    ops_scenario_current: "Actual",
+    ops_scenario_current_desc: "Línea base de 520 pedidos/mes",
+    ops_scenario_conservative: "Conservador (+30%)",
+    ops_scenario_conservative_desc: "Crecimiento orgánico estable",
+    ops_scenario_expected: "Esperado (+50%)",
+    ops_scenario_expected_desc: "Escenario de crecimiento moderado",
+    ops_scenario_convention: "Convención (+100%)",
+    ops_scenario_convention_desc: "Pico de temporada — volumen duplicado, más devoluciones",
+    ops_scenario_aggressive: "Agresivo (+200%)",
+    ops_scenario_aggressive_desc: "Impulso de capacidad total post-expansión",
+
+    // Charts
+    ops_costCurveTitle: "Costo por Pedido vs. Volumen",
+    ops_costCurveDesc: "Muestra cómo la economía unitaria mejora con escala — y dónde los costos escalonados crean saltos",
+    ops_marginCurveTitle: "Margen % vs. Volumen",
+    ops_marginCurveDesc: "Identifica el punto óptimo donde los márgenes alcanzan su pico antes de que las restricciones de capacidad los compriman",
+    ops_totalCostTitle: "Costo Total Mensual vs. Volumen",
+    ops_totalCostDesc: "Los costos escalonados crean saltos visibles cuando se alcanzan umbrales de contratación o límites de capacidad",
+
+    // Cost input panel
+    ops_costStructure: "Estructura de Costos",
+    ops_costStructureDesc: "Edite cualquier campo para ver cómo los cambios afectan sus curvas de costos y márgenes en tiempo real.",
+    ops_fixedCosts: "Costos Fijos",
+    ops_variableCosts: "Costos Variables",
+    ops_stepCosts: "Costos Escalonados",
+    ops_warehouseLease: "Renta del Almacén",
+    ops_equipment: "Arrendamiento de Equipo",
+    ops_utilities: "Seguro y Servicios",
+    ops_management: "Salarios de Gestión",
+    ops_totalFixed: "Total Fijo",
+    ops_laborPerOrder: "Mano de Obra (Recoger y Empacar)",
+    ops_shippingPerOrder: "Envío (promedio)",
+    ops_packagingPerOrder: "Material de Empaque",
+    ops_returnsRate: "Tasa de Devoluciones",
+    ops_returnsCost: "Costo de Procesamiento de Devolución",
+    ops_totalVariable: "Total Variable",
+    ops_scenarioSettings: "Ingresos y Capacidad",
+    ops_avgRevenue: "Ingreso Promedio por Pedido",
+    ops_currentVolume: "Volumen Mensual Actual",
+    ops_warehouseCapacity: "Capacidad del Almacén",
+    ops_demoDisclaimer: "Supuestos de demostración basados en una empresa de venta directa tipo Terramar. Todos los valores son editables — reemplace con sus datos reales para un modelado preciso.",
+
+    // Comparison table
+    ops_comparisonTitle: "Comparación de Escenarios",
+    ops_metric: "Métrica",
+    ops_monthlyVolume: "Volumen Mensual",
+
+    // How it works
+    ops_howItWorksTitle: "Cómo Funciona Esta Herramienta",
+    ops_howItWorks1: "Los costos operativos se modelan en tres capas: costos fijos (renta, equipo, gestión), costos variables (mano de obra, envío, empaque por pedido) y costos escalonados (nuevas contrataciones y expansiones de instalaciones activadas en umbrales de volumen). Esta separación revela cómo la economía unitaria realmente se comporta a diferentes escalas.",
+    ops_howItWorks2: "El control de volumen le permite ver instantáneamente qué sucede con su costo por pedido, margen y utilización a cualquier nivel de volumen. Los descuentos por volumen en envío y empaque se activan automáticamente, y los costos escalonados aparecen cuando cruza umbrales de contratación o capacidad.",
+    ops_howItWorks3: "Cada entrada es editable — reemplace los valores de demostración con sus números reales para un modelado preciso. La URL se actualiza mientras ajusta, así que puede guardar o compartir cualquier configuración específica para presentaciones a la junta.",
   },
 };
 

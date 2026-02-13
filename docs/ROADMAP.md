@@ -14,6 +14,33 @@
 
 ---
 
+### Operational Cost Simulator — `v1.0.0`
+**Status:** Production | **Live:** [ai-build-vs-outsource.vercel.app/ops-cost-simulator](https://ai-build-vs-outsource.vercel.app/ops-cost-simulator)
+
+Interactive what-if tool for modeling how operational costs change under different growth scenarios. Three-layer cost model (fixed, variable, step-function), real-time charts, scenario presets, editable cost structure, side-by-side comparison table.
+
+**Key features:**
+- Cost-per-order curve showing economies of scale and step-cost jumps
+- Margin % visualization with break-even line
+- Total monthly cost chart with step-function staircase
+- 5 scenario presets (Current, Conservative +30%, Expected +50%, Convention +100%, Aggressive +200%)
+- Volume slider (100–2,500 orders/month) with real-time recalculation
+- Editable cost structure (fixed costs, variable costs, revenue & capacity)
+- Volume discount tiers (shipping, packaging) that activate at thresholds
+- Utilization gauges (warehouse, labor) with color-coded alerts
+- Scenario comparison table across all presets
+- Shareable URLs encoding full model state
+
+**Architectural decision — Phase 1 (Static Demo):**
+This version is intentionally client-side only, matching the suite's "no backend required" design principle. The original feature spec proposed Supabase, PostgreSQL, Redis, auth, and multi-user support for later phases. That scope represents a separate SaaS product and should live in its own repo if pursued. Key rationale:
+
+1. **Consistency:** All tools in this suite are static-deploy, client-side-math, zero-infrastructure. Adding a backend to one tool would break the architectural contract and complicate deployments.
+2. **Demo-first validation:** A shareable URL with realistic defaults is sufficient to validate the concept with Terramar (or any prospect). Real data can be entered directly into the editable fields.
+3. **Separation of concerns:** The sales/consulting material from the original spec (discovery call scripts, revenue models, pricing tiers, email templates) belongs in a CRM or business planning doc, not in the codebase.
+4. **Future path:** If a client wants persistent storage, multi-user access, or audit logs, spin that into a dedicated `ops-cost-saas` repo with its own backend architecture.
+
+---
+
 ## Planned
 
 ### 1. Compensation Plan Simulator
@@ -56,31 +83,7 @@ Weighted decision framework for evaluating new country or region entry — same 
 
 ---
 
-### 3. Operational Cost Simulator
-**Priority:** Medium | **Complexity:** Medium | **Reuse:** New visualization, shared design system
-
-Interactive what-if tool for modeling how operational costs change under different growth scenarios.
-
-**Key inputs (sliders):**
-- Monthly order volume (current → projected)
-- Average shipping cost per order
-- Labor cost per warehouse FTE
-- Warehouse lease cost / capacity
-- Returns rate percentage
-- Peak surge multiplier (convention/promo events)
-
-**Key outputs (real-time):**
-- Cost per order at each volume level
-- Total monthly operations spend curve
-- Break-even point visualization
-- Margin compression warnings
-- Side-by-side: current state vs. projected state
-
-**Why this matters:** Operations leaders need to answer "what happens to our unit economics when we 3x?" without building a new spreadsheet every time. This tool makes that instant.
-
----
-
-### 4. Distributor Network Health Scorecard
+### 3. Distributor Network Health Scorecard
 **Priority:** Medium | **Complexity:** Medium | **Reuse:** Same weighted-scoring architecture
 
 Weighted scoring dashboard that evaluates the health of a distributor network across key risk and performance indicators.
@@ -106,7 +109,7 @@ Weighted scoring dashboard that evaluates the health of a distributor network ac
 
 ---
 
-### 5. Inventory Demand Forecaster
+### 4. Inventory Demand Forecaster
 **Priority:** Low | **Complexity:** High | **Reuse:** New architecture
 
 Interactive demand modeling tool for companies with wide SKU catalogs (beauty, cosmetics, supplements).
@@ -153,6 +156,29 @@ Interactive demand modeling tool for companies with wide SKU catalogs (beauty, c
 - **Charts:** Recharts
 - **Deployment:** Vercel
 - **State:** URL params for shareability, React Context for theme/locale
+
+---
+
+## Architectural Notes
+
+### Why no backend?
+These tools are **sales demos and strategic planning aids**, not data-entry applications. The target user opens a URL, drags some sliders, and screenshots or prints the result for a board deck. That workflow doesn't need auth, databases, or server infrastructure. Keeping everything client-side means:
+- Zero hosting cost beyond Vercel's free tier
+- No security surface (no user data to breach)
+- Instant deploys from `main` branch
+- Any tool can be shared as a single URL containing the full state
+
+### When would we add a backend?
+If a specific client engagement requires persistent model storage, multi-user collaboration, historical tracking, or audit logs — that should be a **separate repo** with its own architecture. Don't retrofit a backend onto this static suite.
+
+### Tool addition pattern
+Each new tool follows the same structure:
+1. `data/` — Types, interfaces, default values, presets
+2. `lib/` — Pure calculation functions (no side effects)
+3. `hooks/` — State management with URL sync
+4. `components/<tool-name>/` — UI components scoped to the tool
+5. `app/<tool-route>/page.tsx` — Page entry point
+6. `lib/i18n.ts` — EN/ES translations added to the shared file
 
 ---
 
