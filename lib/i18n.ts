@@ -46,6 +46,10 @@ export const translations = {
     howItWorks2: 'The weight is where your strategy comes in. A weight of 10 means "this is mission-critical to us right now." A weight of 1 means "nice to have but not a deciding factor." The final score is the sum of (score x weight) across all criteria.',
     howItWorks3: "The power of this model: When you adjust weights to reflect your real priorities, the answer emerges from your own strategic thinking — not from a gut feeling. It turns a complex, emotional decision into a data-driven conversation you can present to your CEO and board.",
 
+    // Navigation
+    nav_buildVsOutsource: "Build vs. Outsource",
+    nav_opsCostSim: "Cost Simulator",
+
     // Footer
     builtBy: "Built by",
     tagline: "AI Integration & Software Development Consulting",
@@ -246,6 +250,10 @@ export const translations = {
     howItWorks1: "Cada criterio tiene dos puntajes fijos (Construir vs. 3PL) que representan resultados típicos para una empresa de venta directa en etapa de crecimiento. Estos valores predeterminados se basan en patrones de la industria — una vez que proporcione sus datos reales, los personalizaremos para su situación exacta.",
     howItWorks2: "El peso es donde entra su estrategia. Un peso de 10 significa \"esto es crítico para nosotros ahora mismo\". Un peso de 1 significa \"bueno tenerlo pero no es un factor decisivo\". El puntaje final es la suma de (puntaje x peso) en todos los criterios.",
     howItWorks3: "El poder de este modelo: Cuando ajusta los pesos para reflejar sus prioridades reales, la respuesta surge de su propio pensamiento estratégico — no de una corazonada. Convierte una decisión compleja y emocional en una conversación basada en datos que puede presentar a su CEO y junta directiva.",
+
+    // Navigation
+    nav_buildVsOutsource: "Construir vs. Tercerizar",
+    nav_opsCostSim: "Simulador de Costos",
 
     // Footer
     builtBy: "Construido por",
