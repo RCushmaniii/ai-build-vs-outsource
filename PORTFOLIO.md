@@ -5,8 +5,8 @@ portfolio_priority: 99
 portfolio_featured: false
 
 # === CARD DISPLAY ===
-title: "Build vs. Outsource Decision Framework"
-tagline: "20-criteria weighted scoring tool with real-time verdict"
+title: "Operations Decision Tools Suite"
+tagline: "Interactive decision-support tools for operations leaders — weighted scoring, cost modeling, board-ready output"
 category: "Web Tools"
 tech_stack:
   - "Next.js"
@@ -15,16 +15,35 @@ tech_stack:
   - "Framer Motion"
   - "Recharts"
 status: "Production"
+thumbnail: "public/images/ai-build-vs-outsource-thumb.jpg"
 
 # === DETAIL PAGE ===
-problem: "Operations leaders evaluating build vs. outsource logistics decisions rely on gut feel and incomplete financial comparisons. There's no structured way to weigh 20+ competing factors and present the analysis to a board."
-solution: "Interactive weighted scoring tool that scores 20 criteria across 5 categories in real time as users adjust priority weights. Produces a data-driven verdict with shareable URLs and print-ready output for board presentations."
+problem: "Growth-stage companies face high-stakes operational decisions — build or outsource fulfillment, model costs at scale, plan for step-function cost jumps — armed with nothing but gut feel, incomplete spreadsheets, and circular boardroom arguments."
+solution: "A suite of interactive decision-support tools that replace guesswork with structured, data-driven, shareable analysis. Weighted scoring across categorized criteria, real-time cost modeling with step-function visualization, and board-ready output via shareable URLs and print layouts."
 key_features:
-  - "Real-time verdict updates across 20 weighted criteria (1-10 scale)"
-  - "5-category radar chart comparing Build vs. 3PL at a glance"
-  - "6 scenario presets for rapid what-if analysis"
-  - "Shareable URL encoding with weight state in query params"
-  - "Full EN/ES bilingual support with theme toggle"
+  - "20-criterion weighted scoring across 5 categories with real-time verdict"
+  - "Operational Cost Simulator with three-layer cost model (fixed, variable, step-function)"
+  - "5-axis radar chart, animated verdict panel, and cost-per-order curves"
+  - "6 decision presets and 5 growth scenario presets for rapid what-if analysis"
+  - "Shareable URL encoding — full tool state in query params"
+  - "Full EN/ES bilingual support with dark/light theme toggle"
+  - "Break-even analysis, margin visualization, and utilization gauges"
+  - "Print-ready layouts for board-presentation PDFs"
+
+# === MEDIA ===
+images:
+  - "public/images/ai-build-vs-outsource-01.png"
+  - "public/images/ai-build-vs-outsource-02.png"
+  - "public/images/ai-build-vs-outsource-03.png"
+  - "public/images/ai-build-vs-outsource-04.png"
+  - "public/images/ai-build-vs-outsource-05.png"
+  - "public/images/ai-build-vs-outsource-06.png"
+  - "public/images/ai-build-vs-outsource-07.png"
+  - "public/images/ai-build-vs-outsource-08.png"
+  - "public/images/ai-build-vs-outsource-09.png"
+  - "public/images/ai-build-vs-outsource-10.png"
+video: "public/video/ai-build-vs-outsource-brief.mp4"
+video_poster: "public/video/ai-build-vs-outsource-brief-poster.jpg"
 
 # === LINKS ===
 demo_url: "https://ai-build-vs-outsource.vercel.app"
