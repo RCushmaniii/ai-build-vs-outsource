@@ -1,35 +1,67 @@
-# Build vs. Outsource — Decision Framework
+# Operations Decision Tools Suite
 
-An interactive weighted scoring tool that helps operations leaders evaluate whether to build logistics capacity in-house or outsource to a 3PL. Scores 20 criteria across 5 categories in real time as users adjust priority weights, producing a data-driven verdict suitable for board-level presentations.
+> Interactive decision-support tools for operations leaders at growth-stage direct-selling companies. Structured analysis, real-time feedback, board-ready output — no spreadsheets, no guesswork.
 
 **Live:** [ai-build-vs-outsource.vercel.app](https://ai-build-vs-outsource.vercel.app)
 
 ---
 
-## Live Demo
+## The Problem
 
-Open [ai-build-vs-outsource.vercel.app](https://ai-build-vs-outsource.vercel.app) — no login required.
+Operations leaders at growth-stage companies face high-stakes decisions every quarter — build or outsource fulfillment? Expand to a new market? Restructure the comp plan? These decisions are typically made with gut feel, incomplete spreadsheets, and circular boardroom arguments.
 
-**Try these scenarios:**
-
-1. **Default view** — See the industry-calibrated verdict with 20 criteria scored across Financial, Operational, Strategic, Control & Quality, and Risk categories
-2. **Load "Growth Emergency" preset** — Watch the verdict shift as speed-to-scale and cash flow weights spike to 10
-3. **Load "Control First" preset** — See how maximizing quality and data ownership weights changes the outcome
-4. **Adjust individual weights** — Drag any slider and watch the verdict panel, radar chart, and category subtotals update instantly
-5. **Share a configuration** — Click "Share Link" to copy a URL with your exact weights encoded in the query string
+**This suite replaces that with structured, data-driven, shareable analysis.**
 
 ---
 
-## Features
+## What's Included
 
-| Feature | Outcome |
-|---------|---------|
-| **Real-time weighted scoring** | Verdict updates instantly as you drag any of 20 weight sliders (1-10 scale) |
-| **5-category radar chart** | Visual comparison of Build vs. 3PL across Financial, Operational, Strategic, Control, and Risk |
-| **6 scenario presets** | One-click weight profiles: Balanced, Growth Emergency, Control First, Cost Optimizer, Risk Averse, Recommended Default |
-| **Shareable URLs** | Weight configuration encodes into query params — share a specific scenario via link |
-| **Expandable rationale** | Each criterion includes "Why This Matters" and "Scoring Rationale" sections with industry-specific analysis |
-| **Print-ready layout** | Print button strips interactive elements for a clean board-presentation PDF |
+### 1. Build vs. Outsource Decision Framework — `v1.0.0`
+
+**Live:** [ai-build-vs-outsource.vercel.app](https://ai-build-vs-outsource.vercel.app)
+
+A 20-criterion weighted scoring tool for evaluating whether to build logistics capacity in-house or outsource to a 3PL.
+
+| Feature | Detail |
+|---------|--------|
+| **20 scored criteria** | Across 5 categories: Financial, Operational, Strategic, Control & Quality, Risk |
+| **Real-time weighted scoring** | Drag any slider (1–10) and watch the verdict, radar chart, and subtotals update instantly |
+| **6 scenario presets** | Balanced, Growth Emergency, Control First, Cost Optimizer, Risk Averse, Recommended Default |
+| **5-axis radar chart** | Visual category comparison of Build vs. 3PL at a glance |
+| **Animated verdict panel** | Shows the winner, point totals, and margin of victory |
+| **Expandable rationale** | Each criterion includes "Why This Matters" and "Scoring Rationale" with industry analysis |
+| **Shareable URLs** | Full weight configuration encoded in query params — send a link, not a spreadsheet |
+| **Print-ready layout** | Strips interactive elements for clean board-presentation PDFs |
+| **Bilingual (EN/ES)** | Full translation across all criteria, UI, and rationale content |
+| **Dark/Light theme** | Professional presentation in any setting |
+
+**Try it:** Load the "Growth Emergency" preset and watch the verdict shift as speed-to-scale weights spike to 10. Then switch to "Control First" and see the opposite outcome. That's the point — different priorities lead to different answers, and this tool makes that visible.
+
+---
+
+### 2. Operational Cost Simulator — `v1.0.0`
+
+**Live:** [ai-build-vs-outsource.vercel.app/ops-cost-simulator](https://ai-build-vs-outsource.vercel.app/ops-cost-simulator)
+
+An interactive what-if tool for modeling how operational costs change under different growth scenarios. Reveals the hidden step-function costs that blindside growing companies.
+
+| Feature | Detail |
+|---------|--------|
+| **Three-layer cost model** | Fixed costs (lease, equipment, utilities), variable costs per order (labor, shipping, packaging), and step-function costs (new hires, warehouse expansion at volume thresholds) |
+| **Volume slider** | 100–2,500 orders/month with real-time recalculation |
+| **Cost-per-order curve** | Shows economies of scale and exactly where step-cost jumps hit |
+| **Margin visualization** | Margin % chart with break-even line |
+| **Total cost staircase** | Monthly cost chart showing when step costs trigger |
+| **5 growth presets** | Current, Conservative +30%, Expected +50%, Convention +100%, Aggressive +200% |
+| **Editable cost structure** | Replace demo defaults with your real numbers |
+| **Volume discount tiers** | Shipping and packaging costs decrease at volume thresholds |
+| **Utilization gauges** | Warehouse and labor utilization with color-coded alerts |
+| **Break-even analysis** | Minimum volume needed to achieve profitability |
+| **Scenario comparison table** | Side-by-side cost breakdown across all presets |
+| **Shareable URLs** | Full model state encoded for board presentations |
+| **Bilingual (EN/ES)** | Full translation across all UI and labels |
+
+**Try it:** Set volume to 950 orders, then drag to 1,050. Watch the cost-per-order jump as a new FTE hire triggers. That's the kind of inflection point this tool reveals.
 
 ---
 
@@ -38,23 +70,19 @@ Open [ai-build-vs-outsource.vercel.app](https://ai-build-vs-outsource.vercel.app
 **Prerequisites:** Node.js 18.17+ and pnpm
 
 ```powershell
-# 1. Clone the repository
+# Clone the repository
 git clone https://github.com/RCushmaniii/ai-build-vs-outsource.git
 cd ai-build-vs-outsource
 
-# 2. Install dependencies
+# Install dependencies
 pnpm install
-# Expected output: "Packages: +712 done"
 
-# 3. Start the dev server
+# Start the dev server
 pnpm dev
-# Expected output: "Local: http://localhost:3000"
-
-# 4. Open in browser
-Start-Process http://localhost:3000
+# Open http://localhost:3000
 ```
 
-No `.env` file required — this is a fully client-side application with no backend.
+No `.env` file required — fully client-side with no backend.
 
 ---
 
@@ -66,8 +94,8 @@ No `.env` file required — this is a fully client-side application with no back
 | UI | React 19, Tailwind CSS 4, shadcn/ui |
 | Animations | Framer Motion 12 |
 | Charts | Recharts 3 |
-| Typography | Space Grotesk (headings), Source Serif 4 (body), DM Mono (numbers) |
-| Deployment | Vercel (static export) |
+| Typography | Space Grotesk (headings), Source Serif 4 (body), DM Mono (data) |
+| Deployment | Vercel (static export, auto-deploy from `main`) |
 | Package Manager | pnpm |
 
 ---
@@ -77,30 +105,47 @@ No `.env` file required — this is a fully client-side application with no back
 ```
 ai-build-vs-outsource/
 ├── app/
-│   ├── layout.tsx              # Root layout — fonts, metadata, TooltipProvider
-│   ├── page.tsx                # Main page — wires all components together
-│   └── globals.css             # Tailwind config, CushLabs brand tokens, print styles
+│   ├── layout.tsx                # Root layout — fonts, metadata, providers, site header
+│   ├── page.tsx                  # Build vs. Outsource main page
+│   ├── ops-cost-simulator/
+│   │   └── page.tsx              # Cost Simulator page
+│   └── globals.css               # Tailwind tokens, dark mode vars, print styles
 ├── components/
-│   ├── VerdictPanel.tsx        # Sticky hero with animated Build vs 3PL bars
-│   ├── CategorySection.tsx     # Collapsible category header + criteria group
-│   ├── CriterionCard.tsx       # Individual criterion with expandable rationale
-│   ├── WeightSlider.tsx        # shadcn Slider wrapper with category-colored accent
-│   ├── ScoreBar.tsx            # Horizontal score visualization with gradient fill
-│   ├── RadarChart.tsx          # 5-axis Recharts radar comparing categories
-│   ├── PresetSelector.tsx      # Scenario preset buttons with tooltips
-│   ├── ExportActions.tsx       # Print, Share Link, Reset controls
-│   └── ui/                     # shadcn/ui primitives (slider, accordion, card, tooltip)
+│   ├── VerdictPanel.tsx          # Animated verdict with progress bars
+│   ├── CategorySection.tsx       # Collapsible category + criteria group
+│   ├── CriterionCard.tsx         # Individual criterion with expandable rationale
+│   ├── WeightSlider.tsx          # Slider wrapper with category-colored accent
+│   ├── ScoreBar.tsx              # Horizontal score visualization
+│   ├── RadarChart.tsx            # 5-axis Recharts radar
+│   ├── PresetSelector.tsx        # Scenario preset buttons
+│   ├── ExportActions.tsx         # Print, Share, Reset controls
+│   ├── SiteHeader.tsx            # Sticky header with theme/language/navigation
+│   ├── ops-cost/                 # Cost Simulator components
+│   │   ├── CostDashboard.tsx
+│   │   ├── CostCurveChart.tsx
+│   │   ├── MarginChart.tsx
+│   │   ├── TotalCostChart.tsx
+│   │   ├── CostInputPanel.tsx
+│   │   ├── ScenarioComparison.tsx
+│   │   └── ...
+│   └── ui/                       # shadcn/ui primitives
 ├── data/
-│   ├── criteria.ts             # All 20 criteria with scores, weights, and full content
-│   └── presets.ts              # 6 scenario preset weight configurations
+│   ├── criteria.ts               # 20 criteria with scores and content
+│   ├── presets.ts                # 6 scenario weight profiles
+│   └── ops-cost-defaults.ts      # Cost model defaults and step-cost definitions
 ├── hooks/
-│   ├── useWeights.ts           # Weight state management + URL param sync
-│   └── useVerdict.ts           # Computed verdict and category scores
+│   ├── useWeights.ts             # Build vs. Outsource state + URL sync
+│   ├── useVerdict.ts             # Verdict computation
+│   └── useOpsCostModel.ts        # Cost Simulator state + URL sync
 ├── lib/
-│   └── calculations.ts         # Pure scoring functions (verdict, category scores, URL encoding)
+│   ├── calculations.ts           # Pure scoring logic
+│   ├── ops-calculations.ts       # Cost model math (breakdowns, curves, break-even)
+│   ├── i18n.ts                   # EN/ES translations (all strings)
+│   ├── locale-context.tsx        # Locale provider
+│   ├── theme-context.tsx         # Dark/light theme provider
+│   └── utils.ts
 └── docs/
-    └── templates/
-        └── readme-instructions.md  # CushLabs README generation guide
+    └── ROADMAP.md                # Planned tools and architectural notes
 ```
 
 ---
@@ -109,56 +154,74 @@ ai-build-vs-outsource/
 
 All logic is client-side. No backend, no database, no authentication.
 
-- **Data layer** (`data/criteria.ts`) — 20 criteria with fixed Build/3PL scores (1-10), default weights, and two content blocks each (whyItMatters, scoringRationale)
-- **State** (`hooks/useWeights.ts`) — React useState initialized from URL params, synced back to URL with 300ms debounce
-- **Computation** (`lib/calculations.ts`) — Pure functions: `computeVerdict()` returns weighted totals, percentages, winner, delta; `computeCategoryScores()` returns per-category breakdowns for the radar chart
-- **URL sharing** — Weights serialize to query params (`?upfront_capital=9&cost_per_order=8...`). Invalid or missing params fall back to defaults.
+- **Data layer** — Fixed scores and defaults defined in `data/`. Easy to customize for any company.
+- **State** — React hooks initialized from URL params, synced back with debounce. Every configuration is a shareable URL.
+- **Computation** — Pure functions in `lib/`. Scoring, cost modeling, and break-even calculations with no side effects.
+- **Localization** — All strings in `lib/i18n.ts`. Locale context provides EN/ES across every component.
 
 ---
 
 ## Customization
 
-### Adjusting Scores
+### Adjusting Build vs. Outsource Scores
 
-Edit `data/criteria.ts` to change the fixed Build/3PL scores for any criterion. Each criterion is a plain object:
+Edit `data/criteria.ts` to change the fixed Build/3PL scores for your company:
 
 ```typescript
-// data/criteria.ts
 {
   id: "speed_to_scale",
   name: "Speed to Scale",
-  buildScore: 3,        // Change this for your company-specific data
-  outsourceScore: 9,    // Change this for your company-specific data
+  buildScore: 3,        // Your company-specific score
+  outsourceScore: 9,    // Your company-specific score
   defaultWeight: 10,
-  // ...content fields
+}
+```
+
+### Adjusting Cost Simulator Defaults
+
+Edit `data/ops-cost-defaults.ts` to set your actual cost structure:
+
+```typescript
+{
+  fixedCosts: {
+    warehouseLease: 8500,
+    equipment: 2500,
+    // ...
+  },
+  variableCosts: {
+    laborPerOrder: 2.40,
+    shippingPerOrder: 6.75,
+    // ...
+  }
 }
 ```
 
 ### Adding Presets
 
-Add a new entry to the `PRESETS` array in `data/presets.ts`:
+Add entries to `data/presets.ts` (decision framework) or the cost simulator's preset configuration with your own scenario profiles.
 
-```typescript
-// data/presets.ts
-{
-  id: "custom_scenario",
-  name: "Custom Scenario",
-  description: "Your scenario description",
-  weights: {
-    upfront_capital: 7,
-    cost_per_order: 8,
-    // ... all 20 criterion IDs
-  },
-}
-```
+---
+
+## Roadmap
+
+Four additional tools are planned, all following the same design language:
+
+| Tool | Priority | Description |
+|------|----------|-------------|
+| **Compensation Plan Simulator** | High | Model commission structures and financial impact across distributor tiers |
+| **Market Expansion Readiness Scorecard** | High | Weighted criteria for evaluating new country/region entry |
+| **Distributor Network Health Scorecard** | Medium | Monitor retention, activity, concentration, and early-warning indicators |
+| **Inventory Demand Forecaster** | Low | Multi-SKU demand modeling with seasonality and event calendars |
+
+See [docs/ROADMAP.md](docs/ROADMAP.md) for full details.
 
 ---
 
 ## Deployment
 
-Already deployed to Vercel at [ai-build-vs-outsource.vercel.app](https://ai-build-vs-outsource.vercel.app). The GitHub repo is connected — pushing to `main` triggers automatic redeployment.
+Live at [ai-build-vs-outsource.vercel.app](https://ai-build-vs-outsource.vercel.app). The GitHub repo is connected — pushing to `main` triggers automatic redeployment.
 
-To deploy manually:
+Manual deploy:
 
 ```powershell
 vercel --prod
@@ -166,6 +229,12 @@ vercel --prod
 
 ---
 
+## License
+
+Copyright (c) 2026 Robert Cushman III / CushLabs. All rights reserved. See [LICENSE](LICENSE).
+
+---
+
 ## Built By
 
-[CushLabs.ai](https://cushlabs.ai) — AI Integration & Software Development Consulting
+[CushLabs](https://cushlabs.ai) — AI Integration & Software Development Consulting
