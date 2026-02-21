@@ -136,16 +136,94 @@ Companies can run this analysis themselves, as often as they want, with updated 
 
 ---
 
+## Where This Is Going — The Bigger Vision
+
+Building the first tool revealed something important: **every growth-stage company faces dozens of strategic decisions, and almost none of them have good tooling.**
+
+Build vs. Outsource was the first. But once the weighted scoring engine existed, it became obvious that the same approach applies to a much broader set of decisions — and that not all decisions are the same shape. That realization led to a framework for categorizing strategic decisions and building the right tool for each type.
+
+### The Three Types of Strategic Decisions
+
+#### Type 1: Binary Decisions (A vs. B)
+
+The CEO has to pick a direction. The weighted framework shows which direction their actual priorities support — rather than defaulting to whoever argues loudest.
+
+**This is what the current Build vs. Outsource tool already does.** The following decisions use the exact same engine:
+
+| Decision | What Leadership Is Choosing |
+|----------|-----------------------------|
+| **Growth Capital** | Fund expansion with internal reserves vs. raise external capital |
+| **Recruitment Strategy** | Event-driven recruitment vs. digital-first recruitment |
+| **Manufacturing Localization** | Keep all manufacturing in Mexico vs. open US assembly |
+| **Org Design** | Run US operations from Mexico HQ vs. autonomous US leadership team |
+| **Talent Acquisition** | Promote from within vs. recruit external specialists |
+| **Warehouse Labor** | In-house warehouse team vs. staffed through temp agency |
+| **IT Capability** | Build internal IT team vs. outsource to agencies/MSPs |
+
+These are the strongest candidates for rapid productization. Each one can be built by cloning the existing tool with new criteria and scores. Same UX, same output format, same board-ready result.
+
+#### Type 2: Spectrum Decisions (How Much of A vs. B)
+
+These aren't "pick one" — they're about finding the right balance point. The tool still works, but instead of declaring a winner, the output is a position on a dial: *"Your priorities suggest leaning 72% toward comprehensive compliance."*
+
+| Decision | What Leadership Is Actually Calibrating |
+|----------|----------------------------------------|
+| **Comp Plan Architecture** | Maximize consultant income (drives recruitment, compresses margins) vs. protect company margin (preserves cash, risks losing consultants) |
+| **Brand Channel Strategy** | 100% consultant-only vs. introduce direct-to-consumer channels — how far do you open the door? |
+| **Onboarding Depth** | Fast/light activation vs. comprehensive training investment |
+| **FTC Compliance** | Minimum viable compliance vs. industry-leading transparency — how much do you invest? |
+
+Same weighted criteria engine under the hood. New UX for the verdict: a position on a spectrum instead of a winner declaration.
+
+#### Type 3: Prioritization Decisions (Rank N Options)
+
+Leadership isn't choosing A vs. B — they're choosing which of 5–8 options to invest in first. This requires a different tool: a ranked scorecard where each option gets scored across weighted criteria, and the output is a prioritized list that shifts in real time as weights change.
+
+| Decision | What It Really Is |
+|----------|-------------------|
+| **US Market Prioritization** | Rank 8–10 metro areas by weighted criteria to decide where to expand first |
+| **Tech Platform Priority** | Rank 5–6 technology investments by impact, cost, and feasibility |
+| **E-Commerce Platform** | Compare 3–4 platform options side by side |
+
+Biggest build of the three types, but extremely compelling for market entry and investment prioritization decisions.
+
+### What This Means for the Product
+
+This gives CushLabs three product tiers instead of one:
+
+| Tier | Tool Type | Output | Build Effort | Status |
+|------|-----------|--------|-------------|--------|
+| **1** | Binary Decision Tool | Winner with weighted score | Clone existing tool | **Shipped** (Build vs. Outsource) — 7 more ready to build |
+| **2** | Spectrum Advisor | Position on a dial (e.g., "72% toward A") | Moderate — redesign verdict section | Planned |
+| **3** | Multi-Option Ranker | Prioritized ranking of 3–8 options | Larger build — new scoring UI | Planned |
+
+The 7 Type 1 binary decisions are the fastest to productize — same proven architecture, same UX, same board-ready output. They're next.
+
+---
+
 ## Product Roadmap Summary
 
-| Tool | Status | Description |
-|------|--------|-------------|
-| **Build vs. Outsource Framework** | Shipped | 20-criterion weighted decision scoring |
-| **Operational Cost Simulator** | Shipped | Interactive what-if cost modeling |
-| **Compensation Plan Simulator** | Planned | Commission structure modeling and financial impact |
-| **Market Expansion Scorecard** | Planned | Weighted criteria for new market entry |
-| **Distributor Network Health** | Planned | Retention, activity, and risk monitoring |
-| **Inventory Demand Forecaster** | Planned | Multi-SKU demand modeling with seasonality |
+### Shipped
+
+| Tool | Type | Description |
+|------|------|-------------|
+| **Build vs. Outsource Framework** | Binary (Type 1) | 20-criterion weighted decision scoring |
+| **Operational Cost Simulator** | Cost Modeling | Interactive what-if cost modeling with step-function visualization |
+
+### Next Up — Binary Decision Tools (Type 1)
+
+7 additional binary decision frameworks using the proven weighted scoring engine. Each one addresses a specific strategic decision that growth-stage direct-selling companies face.
+
+### Planned — New Tool Types
+
+| Tool | Type | Description |
+|------|------|-------------|
+| **Spectrum Advisor** | Spectrum (Type 2) | Weighted criteria → position on a dial instead of a winner |
+| **Multi-Option Ranker** | Prioritization (Type 3) | Weighted scoring across 3–8 options with real-time ranking |
+| **Compensation Plan Simulator** | Financial Modeling | Commission structure modeling and payout impact |
+| **Market Expansion Scorecard** | Binary (Type 1) | Weighted criteria for new country/region entry |
+| **Distributor Network Health** | Health Scoring | Retention, activity, concentration, and early-warning indicators |
+| **Inventory Demand Forecaster** | Demand Modeling | Multi-SKU demand modeling with seasonality |
 
 ---
 
