@@ -1,8 +1,8 @@
 ---
 # === CONTROL FLAGS ===
 portfolio_enabled: true
-portfolio_priority: 4
-portfolio_featured: true
+portfolio_priority: 5
+portfolio_featured: false
 
 # === CARD DISPLAY ===
 title: "Build vs. Outsource Decision Framework"
