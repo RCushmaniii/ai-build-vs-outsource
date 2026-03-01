@@ -8,7 +8,7 @@ portfolio_featured: false
 title: "Build vs. Outsource Decision Framework"
 tagline: "Interactive decision tools with weighted scoring, cost modeling, and board-ready output"
 slug: "ai-build-vs-outsource"
-category: "Web Tools"
+category: "Tools"
 tech_stack:
   - "Next.js 16"
   - "React 19"
