@@ -103,19 +103,6 @@ health_status:
   dependabot: "Y"
   secret_scanning: "Y"
   db_backup: "-"
-health_status:
-  sentry: "-"
-  testing: "-"
-  ci_cd: "Y"
-  health_endpoint: "n/a"
-  security_headers: "-"
-  rate_limiting: "n/a"
-  env_validation: "-"
-  analytics: "DEFERRED"
-  structured_logging: "-"
-  dependabot: "Y"
-  secret_scanning: "Y"
-  db_backup: "-"
 ---
 
 ## Overview
