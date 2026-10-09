@@ -3,6 +3,7 @@
 portfolio_enabled: true
 portfolio_priority: 15
 portfolio_featured: false
+portfolio_last_reviewed: "2026-09-13"
 
 # === CARD DISPLAY ===
 title: "Build vs. Outsource Decision Framework"
